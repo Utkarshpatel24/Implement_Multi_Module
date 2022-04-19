@@ -1,0 +1,22 @@
+<?php
+require_once"".APP_PATH."/admin/views/common/index.phtml";
+?>
+<body>
+    <div class="container-fluid">
+        <div class="mt-5 d-flex flex-column">
+            <h1>Signup Here !!</h1>
+            <form action="" method="post">
+                <input type="email" name="email" value="Enter Email">
+                <input type="password" name="password" value="Enter Password">
+                <button>Submit</button>
+            </form>
+        </div>
+        <a href="/admin/admin/login" class="btn btn-danger">login</a>
+    </div>
+</body>
+<?php
+echo "<pre>";
+print_r($postdata);
+print_r($result);
+// echo $result;
+?>
