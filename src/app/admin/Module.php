@@ -17,7 +17,8 @@ class Module implements ModuleDefinitionInterface
         $loader = new Loader();
         $loader->registerNamespaces(
             [
-                'Multi\Admin\Controllers' => APP_PATH.'/admin/controllers/',
+                'Multi\Admin\Controllers' => APP_PATH.'/admin/controllers',
+                'Multi\Admin\Controllers\AdminControllers' => APP_PATH.'/admin/controllers/admin/',
                 'Model'      => APP_PATH.'/admin/models/',
             ]
         );

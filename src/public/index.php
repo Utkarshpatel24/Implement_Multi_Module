@@ -8,7 +8,7 @@ use Phalcon\Url;
 use Phalcon\Db\Adapter\Pdo\Mysql;
 use Phalcon\Config;
 use Phalcon\Mvc\Router;
-
+use Multi\Admin\Controllers\AdminControllers;
 $config = new Config([]);
 
 // Define some absolute path constants to aid in locating resources
@@ -101,15 +101,20 @@ $container->set(
                 'action'     => 'login',
             ]
         );
+        $router->add('/admin/:controller/:action', [
+            'namespace'  => 'Multi\Admin\Controllers\AdminControllers',
+            'controller' => 1, // {:controller}
+            'action'    => 2
+        ]);
 
-        $router->add(
-            '/admin/admin/:action',
-            [
-                'module'     => 'admin',
-                'controller' => 'admin',
-                'action'     => 1,
-            ]
-        );
+        // $router->add(
+            // '/admin/admin/:action',
+            // [
+                // 'module'     => 'admin',
+                // 'controller' => 'admin',
+                // 'action'     => 1,
+            // ]
+        // );
 
         $router->add(
             '/product/:action',
@@ -118,6 +123,7 @@ $container->set(
                 'action'     => 1,
             ]
         );
+
 
         return $router;
     }
